@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Repositórios do Github</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        body {
+        background: #fff;
+        font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+        }
+        
+        input {
+        outline: 0;
+        }
+
+        #topo {
+        display: flex;
+        min-width: 100%;
+        background: rgb(164, 173, 204);
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+ 
+        }
+
+        .content{
+        max-width: 1366px;
+        margin: 0 auto;
+        padding: 0 30px;
+        }
+
+
+        #carregando {
+        display: block;
+        text-align: center;
+        width: 100%;
+        }
+
+        #lista {
+        /* float: right; */
+        display: flex;
+        width: 100%;
+        background: #fff;
+        align-items: left;
+        justify-content: flex-start;
+        clear: both;
+        }
+
+        ul {
+            list-style:none;
+            margin:0 auto;
+            padding:0;
+            width: 100vw;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            align-items: flex-start;
+            justify-content: space-between;
+            
+        
+
+
+        }
+
+        li {
+            /* clear: both;  */
+            margin: 0 auto;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 20vw;
+            display: flex;
+            flex-grow: 0;
+            flex-shrink: 0; 
+            /* flex-basis: auto; */
+            flex-direction: column;
+            justify-content: space-between;
+            
+        }
+
+        img {
+            width: 80px;
+            float: left;
+            margin-right: 10px;
+        }
+        strong {
+            margin: 5px 0;
+            font-size: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+            display:flex;
+        }
+
+        form {
+            margin: 20px;
+
+        }
+
+        button {
+            color: azure;
+            margin:5px;
+            padding: 10px;
+            background: #5b13b8;
+            height: 40px;
+            border: none;
+        }
+
+        input{
+            height: 40px;
+            padding-left:5px;
+        }
+
+        select {
+            -webkit-appearance: menulist-button;
+            color: #333;
+            background: #fff;
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="topo">
+    <form id="repo-form">
+        <input type="text" name="repository" value="octocat/Hello-World">
+        <button type="submit">Adicionar Usuário/repositório</button>
+    </form>
+
+    <form id="userlist-form">
+        <input list="gitUsers" name="userlist" placeholder="Selecione..">
+        <datalist id="gitUsers">
+            <option value="rocketseat">
+            <option value="diego3g">
+            <option value="maykbrito">
+            <option value="filipedeschamps">
+            <option value="almirjakubaitis">
+          </datalist>
+
+        <button type="submit">Listar Repositório</button>
+    </form>
+    </div>
+
+    <div class="content">    
+    <div id="carregando"></div>
+    <div id="lista">
+    <ul id="repo-list">
+        <!-- <li>
+            <img src="https:/avatars0.githubusercontent.com/u/28929274?v=4/" alt="">
+            <strong>rocketseat.com.br</strong>
+            <p>Tire a sua ideia do papel e dê vida a sua startup.</p>
+            <a target=_blank href="https://github.com/rocketseat">Acessar</a>
+        </li> -->
+        
+
+    </ul>
+    </div>
+
+</div>
+
+
+    <script src="./bundle.js"></script>
+</body>
+</html>
